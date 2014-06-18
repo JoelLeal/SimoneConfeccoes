@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Venda</title>
+</h:head>
+<h:body>
+<h:form id="frmAdcionarProduto">
+<p:growl id="growl" showDetail="true" life="7000"/>
+	<div align="center">
+	<h2>Adcionar Produto da Venda</h2>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Código Venda"/>
+			<p:outputLabel value="#{vendaMB.codigo}"/>
+			
+			<p:outputLabel value="Código Produto"/>
+			<p:inputText id="txtMateria" value="#{vendaMB.vndDet.idProduto}"/>
+			
+			<p:outputLabel value="Valor Unitario"/>
+			<p:inputText id="txtValor" value="#{vendaMB.vndDet.valorUnitario}"/>
+			
+			<p:outputLabel value="Quantidade"/>
+			<p:spinner id="txtQtde" value="#{vendaMB.vndDet.qtde}" min="1"/>
+			
+		</p:panelGrid>
+		<p:commandButton value="Salvar" action="#{vendaMB.salvarProd()}" update=":frmAdcionarProduto" icon="ui-icon-disk"/>
+		<p:commandButton value="Finalizar Venda" action="#{vendaMB.atualizar()}" update=":frmAdcionarProduto" icon="ui-icon-check"/>
+	</div>
+</h:form>
+</h:body>
+</html>

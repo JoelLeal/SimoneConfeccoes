@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Cliente</title>
+</h:head>
+<h:body>
+<h:form id="frmCadastrarCliente">
+<p:growl id="growl" showDetail="true"  life="7000"/>
+	<div align="center">
+	<h2>Cadastrar Cliente</h2>
+	<p:commandButton action="#{paginasMB.index()}" value="Voltar Menu"/>
+	<p:panelGrid columns="2">
+	
+		<p:outputLabel value="Nome Fantasia: "/>
+		<p:inputText id="txtNome" value="#{clienteMB.cliente.nomeFantasia}" size="50"/>
+		
+		<p:outputLabel value="Razão Social: "/>
+		<p:inputText id="txtRazao" value="#{clienteMB.cliente.razaoSocial}" size="50"/>
+		
+		<p:outputLabel value="CPF ou CNPJ: "/>
+		<p:inputText id="txtCpf" value="#{clienteMB.cliente.cpfCnpj}" size="50"/>
+		
+		<p:outputLabel value="RG ou IE: "/>
+		<p:inputText id="txtRg" value="#{clienteMB.cliente.rgIe}" size="50"/>
+		
+		<p:outputLabel value="CEP: "/>
+		<p:inputText id="txtCep" value="#{clienteMB.cliente.cep}" size="50"/>
+		
+		<p:outputLabel value="Endereço: "/>
+		<p:inputText id="txtEndereco" value="#{clienteMB.cliente.endereco}" size="50"/>
+		
+		<p:outputLabel value="Bairro: "/>
+		<p:inputText id="txtBairro" value="#{clienteMB.cliente.bairro}" size="50"/>
+		
+		<p:outputLabel value="Cidade: "/>
+		<p:inputText id="txtCidade" value="#{clienteMB.cliente.cidade}" size="50"/>
+		
+		<p:outputLabel value="Estado: "/>
+		<p:inputText id="txtEstado" value="#{clienteMB.cliente.estado}" size="50"/>
+		
+		<p:outputLabel value="Complemento: "/>
+		<p:inputText id="txtComplemento" value="#{clienteMB.cliente.complemento}" size="50"/>
+		
+		<p:outputLabel value="Data Nascimento: "/>
+		<p:calendar id="dtNascimento" navigator="true" pattern="dd-MM-yyyy" value="#{clienteMB.cliente.dataNascimento}"/>
+		
+		<p:outputLabel value="Telefone Residencial: "/>
+		<p:inputText id="txtTelefone" value="#{clienteMB.cliente.telResidencial}" size="50"/>
+		
+		<p:outputLabel value="Celular: "/>
+		<p:inputText id="txtCelular" value="#{clienteMB.cliente.celular}" size="50"/>
+		
+		<p:outputLabel value="Outro Telefone: "/>
+		<p:inputText id="txtOutro" value="#{clienteMB.cliente.outroTelefone}" size="50"/>
+		
+		<p:outputLabel value="Email: "/>
+		<p:inputText id="txtEmail" value="#{clienteMB.cliente.email}" size="50"/>
+		
+	</p:panelGrid>
+	
+	<p:commandButton action="#{clienteMB.salvar()}" value="Salvar" update=":frmCadastrarCliente"/>
+	<p:commandButton action="#{paginasMB.cadCli()}" value="Limpar" update=":frmCadastrarCliente"/>
+	</div>
+</h:form>
+</h:body>
+</html>

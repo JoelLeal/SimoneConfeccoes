@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Buscar Compra Detalhada</title>
+</h:head>
+<h:body>
+	<h:form id="frmBuscarCompraDet">
+		<div align="center">
+		<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+		<p:panel header="Compra Detalhada">
+			<p:dataTable value="#{compraMB.lstCompDet}" var="comp">
+			
+				<p:column filterBy="#{comp.idCompra}" headerText="Código Compra">
+					<h:outputText value="#{comp.idCompra}"/>
+				</p:column>
+			
+				<p:column filterBy="#{comp.idMateriaPrima}" headerText="Código Matéria Prima">
+					<h:outputText value="#{comp.idMateriaPrima}"/>
+				</p:column>
+				
+				<p:column headerText="Valor KG">
+					<p:outputLabel value="#{comp.valorkg}"/>
+				</p:column>
+				
+				<p:column headerText="Quantidade KG">
+					<h:outputText value="#{comp.qtdekg}"/>
+				</p:column>
+				
+				<p:column headerText="Valor Total">
+					<p:outputLabel value="#{comp.valorTotal}"/>
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+		</div>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Compra</title>
+</h:head>
+<h:body>
+<h:form id="frmAdcionarMateriaPrima">
+<p:growl id="growl" showDetail="true" life="7000"/>
+	<div align="center">
+	<h2>Adcionar Matéria Prima da Compra</h2>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Código Compra"/>
+			<p:outputLabel value="#{compraMB.codigo}"/>
+			
+			<p:outputLabel value="Código Matéria Prima"/>
+			<p:inputText id="txtMateria" value="#{compraMB.compDet.idMateriaPrima}"/>
+			
+			<p:outputLabel value="Valor do KG"/>
+			<p:inputText id="txtValor" value="#{compraMB.compDet.valorkg}"/>
+			
+			<p:outputLabel value="Quantidade KG"/>
+			<p:inputText id="txtQtde" value="#{compraMB.compDet.qtdekg}"/>
+			
+		</p:panelGrid>
+		<p:commandButton value="Salvar" action="#{compraMB.salvarMat()}" update=":frmAdcionarMateriaPrima" icon="ui-icon-disk"/>
+		<p:commandButton value="Finalizar Compra" action="#{compraMB.atualizar()}" update=":frmAdcionarMateriaPrima" icon="ui-icon-check"/>
+	</div>
+</h:form>
+</h:body>
+</html>

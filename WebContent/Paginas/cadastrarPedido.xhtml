@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Pedido</title>
+</h:head>
+<h:body>
+<h:form id="frmCadastrarPedido">
+<p:growl id="growl" showDetail="true" life="7000"/>
+	<div align="center">
+	<h2>Cadastrar Pedido</h2>
+	<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Código Cliente"/>
+			<p:inputText id="txtCliente" value="#{pedidoMB.ped.idCliente}"/>
+			
+			<p:outputLabel value="Descrição"/>
+			<h:inputTextarea id="txtDescricao" value="#{pedidoMB.ped.descricao}" />
+			
+			<p:outputLabel value="Data Pedido"/>
+			<p:calendar id="dtPedido" navigator="true" pattern="dd-MM-yyyy" value="#{pedidoMB.ped.dataPedido}"/>
+			
+			<p:outputLabel value="Data Previsão"/>
+			<p:calendar id="dtPrevisao" navigator="true" pattern="dd-MM-yyyy" value="#{pedidoMB.ped.dataPrevisao}"/>
+			
+			<p:outputLabel value="Data Pronto"/>
+			<p:calendar id="dtPronto" navigator="true" pattern="dd-MM-yyyy" value="#{pedidoMB.ped.dataPronto}"/>
+			
+			<p:outputLabel value="Valor Previsto"/>
+			<p:inputText id="txtValorPrevisto" value="#{pedidoMB.ped.valorPrevisto}"/>
+			
+			<p:outputLabel value="Valor Final"/>
+			<p:inputText id="txtValorFinal" value="#{pedidoMB.ped.valorFinal}"/>
+		</p:panelGrid>
+		<p:commandButton action="#{pedidoMB.salvar()}" value="Salvar" update=":frmCadastrarPedido"/>
+		</div>
+</h:form>
+</h:body>
+</html>

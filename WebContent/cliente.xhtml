@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+> 
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro de Cliente</title>
+</h:head>
+<h:body>
+	<h:form id="frmCliente">
+	<p:growl id="msg" showDetail="true" showSummary="true"/>
+	<h1> Cadastro de Cliente </h1>
+		<p:panelGrid columns="2">
+			
+			<h:outputLabel value="Nome: "/>
+			<h:inputText id="nome" size="50"></h:inputText>
+			
+			<h:outputLabel value="CPF: "/>
+			<h:inputText id="cpf" size="50"></h:inputText>
+			
+			<h:outputLabel value="RG: "/>
+			<h:inputText id="rg" size="50"></h:inputText>
+			
+			<h:outputLabel value="Endereço: "/>
+			<h:inputText id="end" size="50"></h:inputText>
+			
+			<h:outputLabel value="Telefone: "/>
+			<h:inputText id="tel" size="50"></h:inputText>
+			
+			<h:outputLabel value="Email: "/>
+			<h:inputText id="email" size="50"></h:inputText>
+			
+			<h:outputLabel value="CEP: "/>
+			<h:inputText id="cep" size="50"></h:inputText>
+		</p:panelGrid>
+		<br></br>
+		<p:commandButton value="Gravar"></p:commandButton>
+		
+		<p:commandButton value="Cancelar"></p:commandButton>
+	</h:form>
+</h:body>
+</html>

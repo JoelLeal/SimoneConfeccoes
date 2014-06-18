@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Menu Principal</title>
+</h:head>
+<h:body>
+
+<h:form id="frmPrincipal">
+	<h1  align="center">Menu Principal</h1>
+	
+	<p:megaMenu>
+		<p:submenu label="Cliente" icon="ui-icon-person">
+			<p:column>
+				<p:submenu label="Cliente">
+					<p:menuitem value="Cadastrar" action="#{paginasMB.cadCli()}"/>
+					<p:menuitem value="Buscar"  action="#{paginasMB.busCli()}" />
+					<p:menuitem value="Alterar"/>
+					<p:menuitem value="Deletar"/>
+				</p:submenu>
+			</p:column>
+		</p:submenu>
+		
+		<p:submenu label="Fornecedor" icon="ui-icon-home">
+			<p:column>
+				<p:submenu label="Fornecedor">
+					<p:menuitem value="Cadastrar" action="#{paginasMB.cadForn()}"/>
+					<p:menuitem value="Buscar" action="#{paginasMB.busForn}"/>
+					<p:menuitem value="Alterar"/>
+					<p:menuitem value="Deletar"/>
+				</p:submenu>
+			</p:column>
+		</p:submenu>
+		
+		<p:submenu label="Venda" icon="ui-icon-cart">
+			<p:column>
+				<p:submenu label="Venda">
+					<p:menuitem value="Cadastrar" url="cadastrarVenda.jsf"/>
+					<p:menuitem value="Busca Simples" url="buscarVenda.jsf"/>
+					<p:menuitem value="Busca Detalhada" url="buscarVendaDetalhe.jsf"/>
+				</p:submenu>
+			</p:column>
+		</p:submenu>
+		
+		<p:submenu label="Compra" icon="ui-icon-cart">
+			<p:column>
+				<p:submenu label="Compra">
+					<p:menuitem value="Cadastrar" url="cadastrarCompra.jsf"/>
+					<p:menuitem value="Busca Simples" url="buscarCompra.jsf"/>
+					<p:menuitem value="Busca Avançada" url="buscarCompraDetalhe.jsf"/>
+				</p:submenu>
+			</p:column>
+		</p:submenu>
+		
+		<p:submenu label="Matéria Prima" icon="ui-icon-scissors">
+		<p:column>
+			<p:submenu label="Matéria Prima">
+				<p:menuitem value="Cadastrar" action="#{paginasMB.cadMatPri()}"/>
+				<p:menuitem value="Buscar" action="#{paginasMB.busMatPri()}"/>
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	
+	<p:submenu label="Produto" icon="ui-icon-suitcase">
+		<p:column>
+			<p:submenu label="Produto">
+				<p:menuitem value="Cadastrar" action="#{paginasMB.cadProd()}"/>
+				<p:menuitem value="Buscar" action="#{paginasMB.busProd()}"/>
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	
+	<p:submenu label="Pedido" icon="ui-icon-clock">
+		<p:column>
+			<p:submenu label="Pedido">
+				<p:menuitem value="Cadastrar" action="#{paginasMB.cadPed()}"/>
+				<p:menuitem value="Buscar" action="#{paginasMB.busPed()}"/>
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	</p:megaMenu>
+	
+</h:form>
+</h:body>
+</html>

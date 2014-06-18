@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Fornecedor</title>
+</h:head>
+<h:body>
+
+<h:form id="frmCadastrarFornecedor">
+<p:growl id="growl" showDetail="true"  life="7000"/>
+	<div align="center">
+	<h2>Cadastrar Fornecedor</h2>
+	<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+	<p:panelGrid columns="2">
+	
+		<p:outputLabel value="Nome Fantasia: "/>
+		<p:inputText id="txtNome" value="#{fornecedorMB.fornec.nomeFantasia}" size="50"/>
+		
+		<p:outputLabel value="Razão Social: "/>
+		<p:inputText id="txtRazao" value="#{fornecedorMB.fornec.razaoSocial}" size="50"/>
+		
+		<p:outputLabel value="CNPJ: "/>
+		<p:inputText id="txtCpf" value="#{fornecedorMB.fornec.cnpj}" size="50"/>
+		
+		<p:outputLabel value="IE: "/>
+		<p:inputText id="txtRg" value="#{fornecedorMB.fornec.ie}" size="50"/>
+		
+		<p:outputLabel value="CEP: "/>
+		<p:inputText id="txtCep" value="#{fornecedorMB.fornec.cep}" size="50"/>
+		
+		<p:outputLabel value="Endereço: "/>
+		<p:inputText id="txtEndereco" value="#{fornecedorMB.fornec.endereco}" size="50"/>
+		
+		<p:outputLabel value="Bairro: "/>
+		<p:inputText id="txtBairro" value="#{fornecedorMB.fornec.bairro}" size="50"/>
+		
+		<p:outputLabel value="Cidade: "/>
+		<p:inputText id="txtCidade" value="#{fornecedorMB.fornec.cidade}" size="50"/>
+		
+		<p:outputLabel value="Estado: "/>
+		<p:inputText id="txtEstado" value="#{fornecedorMB.fornec.estado}" size="50"/>
+		
+		<p:outputLabel value="Complemento: "/>
+		<p:inputText id="txtComplemento" value="#{fornecedorMB.fornec.complemento}" size="50"/>
+		
+		<p:outputLabel value="Telefone Comercial: "/>
+		<p:inputText id="txtTelefone" value="#{fornecedorMB.fornec.telComercial}" size="50"/>
+		
+		<p:outputLabel value="Celular: "/>
+		<p:inputText id="txtCelular" value="#{fornecedorMB.fornec.celular}" size="50"/>
+		
+		<p:outputLabel value="Outro Telefone: "/>
+		<p:inputText id="txtOutro" value="#{fornecedorMB.fornec.outroTelefone}" size="50"/>
+		
+		<p:outputLabel value="Email: "/>
+		<p:inputText id="txtEmail" value="#{fornecedorMB.fornec.email}" size="50"/>
+		
+	</p:panelGrid>
+	<p:commandButton action="#{fornecedorMB.salvar()}" value="Salvar" update=":frmCadastrarFornecedor"/>
+	<p:commandButton action="#{paginasMB.cadForn()}" value="Limpar" update=":frmCadastrarFornecedor"/>
+	</div>
+</h:form>
+</h:body>
+</html>

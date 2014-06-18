@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Compra</title>
+</h:head>
+<h:body>
+<h:form id="frmCadastrarCompra">
+<p:growl id="growl" showDetail="true" life="7000"/>
+	<div align="center">
+	<h2>Cadastrar Compra</h2>
+	<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+		<p:panelGrid columns="2">
+			
+			<p:outputLabel value="Código Fornecedor"/>
+			<p:inputText id="txtMateria" value="#{compraMB.comp.idFornecedor}"/>
+			
+			<p:outputLabel value="Data Compra"/>
+			<p:calendar id="dtCompra" pattern="dd-MM-yyyy" navigator="true" value="#{compraMB.comp.dataCompra}"/>
+			
+		</p:panelGrid>
+		<p:commandButton value="Salvar" action="#{compraMB.salvar()}" update=":frmCadastrarCompra" icon="ui-icon-disk"/>
+		</div>
+</h:form>
+</h:body>
+</html>

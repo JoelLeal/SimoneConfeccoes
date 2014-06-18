@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Buscar Venda Detalhada</title>
+</h:head>
+<h:body>
+	<h:form id="frmBuscarVendaDetalhe">
+		<div align="center">
+		<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+		<p:panel header="Vendas Detalhada">
+			<p:dataTable value="#{vendaMB.lstVndDet}" var="vnd">
+			
+				<p:column filterBy="#{vnd.idVena}" headerText="Código Venda">
+					<h:outputText value="#{vnd.idVena}"/>
+				</p:column>
+				
+				<p:column filterBy="#{vnd.idProduto}" headerText="Código do Produto">
+					<h:outputText value="#{vnd.idProduto}"/>
+				</p:column>
+				
+				<p:column headerText="Valor Unitário Produto">
+					<p:outputLabel value="#{vnd.valorUnitario}"/>
+				</p:column>
+				
+				<p:column headerText="Valor Total">
+					<p:outputLabel value="#{vnd.qtde}"/>
+				</p:column>
+				
+				<p:column headerText="Valor Total">
+					<p:outputLabel value="#{vnd.valorTotal}"/>
+				</p:column>
+				
+			</p:dataTable>
+		</p:panel>
+		</div>
+	</h:form>
+</h:body>
+</html>

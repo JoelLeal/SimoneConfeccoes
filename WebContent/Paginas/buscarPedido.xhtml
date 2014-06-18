@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"  
+    	xmlns:h="http://java.sun.com/jsf/html"  
+    	xmlns:f="http://java.sun.com/jsf/core"  
+    	xmlns:p="http://primefaces.org/ui"
+    	xmlns:pe="http://primefaces.org/ui/extensions"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Buscar Pedido</title>
+</h:head>
+<h:body>
+	<h:form id="frmPedido">
+	<div align="center">
+	<p:commandButton value="Voltar ao Menu Principal" action="#{paginasMB.index()}"/>
+		<p:panel header="Pedidos">
+			<p:dataTable value="#{pedidoMB.lstPed}" var="lstped">
+			
+				<p:column filterBy="#{lstped.id}" headerText="Código">
+					<h:outputText value="#{lstped.id}"/>
+				</p:column>
+				
+				<p:column filterBy="#{lstped.idCliente}" headerText="Cliente">
+					<h:outputText value="#{lstped.idCliente}"/>
+				</p:column>
+				
+				<p:column headerText="Descrição">
+					<h:outputText value="#{lstped.descricao}"/>
+				</p:column>
+				
+				<p:column headerText="Data Pedido">
+					<p:calendar pattern="dd-MM-yyyy" value="#{lstped.dataPedido}" disabled="true"/>
+				</p:column>
+				
+				<p:column headerText="Data Previsão">
+					<p:calendar pattern="dd-MM-yyyy"  value="#{lstped.dataPrevisao}" disabled="true"/>
+				</p:column>
+				
+				<p:column headerText="Valor Previsto">
+					<h:outputText value="#{lstped.valorPrevisto}"/>
+				</p:column>
+			
+			</p:dataTable>
+		</p:panel>
+	</div>
+	</h:form>
+</h:body>
+</html>
